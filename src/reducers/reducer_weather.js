@@ -1,11 +1,14 @@
-import { FETCHED_WEATHER } from '../actions/index'
+import { FETCH_WEATHER } from '../actions/index'
 
 export default function(state = [], action) {
     switch(action.type) {
-        case FETCHED_WEATHER:
+        case FETCH_WEATHER:
             return [ action.payload.data, ...state ];
-    }
+        default:
+            return state;
+    
+        }
 
 
-    return state;
+    
 }
